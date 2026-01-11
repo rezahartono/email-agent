@@ -36,9 +36,6 @@ export const SendEmailHandler = async (c: Context) => {
             message: 'Message sent successfully',
         })
     } catch (error) {
-        console.log('====================================');
-        console.log(error);
-        console.log('====================================');
         return c.json(
             { success: false, message: 'Failed to send email' },
             500
