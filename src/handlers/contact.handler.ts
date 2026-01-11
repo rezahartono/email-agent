@@ -18,16 +18,16 @@ export const SendEmailHandler = async (c: Context) => {
         )
     }
 
-    const { token } = parsed.data
-    const ip = c.req.header('cf-connecting-ip')
-    const turnstile = await verifyTurnstile(token, ip)
+    // const { token } = parsed.data
+    // const ip = c.req.header('cf-connecting-ip')
+    // const turnstile = await verifyTurnstile(token, ip)
 
-    if (!turnstile.success) {
-        return c.json(
-            { success: false, message: 'Bot verification failed' },
-            403
-        )
-    }
+    // if (!turnstile.success) {
+    //     return c.json(
+    //         { success: false, message: 'Bot verification failed' },
+    //         403
+    //     )
+    // }
     const mailService = new MailService()
 
     try {
