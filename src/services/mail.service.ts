@@ -15,9 +15,6 @@ export class MailService {
     }
 
     async send(data: ContactInput) {
-        console.log('====================================');
-        console.log(this.transporter);
-        console.log('====================================');
         return this.transporter.sendMail({
             from: process.env.SMTP_FROM,
             to: process.env.SMTP_TO,
