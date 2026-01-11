@@ -6,7 +6,7 @@ import { SendEmailHandler } from './handlers/contact.handler.js'
 const app = new Hono()
 
 app.use("/*", cors({
-  origin: ["*"],
+  origin: "*",
   allowMethods: ['POST', 'GET', 'OPTIONS'],
 }))
 app.get('/', (c) => {
